@@ -658,7 +658,7 @@ class FourBarLinkage_Model():
             y2 = self.OutputLink.stPt.y() - l3 * math.sin(angle2)
             self.lTest = math.sqrt(math.pow(x2 - x1, 2) + math.pow(y2 - y1, 2))
             return l2 - self.lTest
-
+        # Here is where the position of coupler link is found.
         result = optimize.fsolve(fn1, [self.angle2])
         if abs(self.lTest - l2) > 0.001:
             self.angle2 = self.prevBeta
